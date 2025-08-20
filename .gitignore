@@ -1,46 +1,14 @@
-# Archivos generados por el script
-contactos_ficticios_mece_*.csv
-
-# Archivos del sistema
+# macOS
 .DS_Store
-Thumbs.db
 
-# Archivos de Python
+# Python
 __pycache__/
 *.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
+*.pyo
+*.pyd
+*.env
+.env
+.venv/
 
-# Entornos virtuales
-venv/
-env/
-ENV/
-
-# IDEs
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Logs
-*.log
-
-# Archivos temporales
-*.tmp
-*.temp
+# Generated CSV outputs
+contactos_ficticios_mece_*.csv 
