@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+      - name: Run generator smoke test
+        run: echo "3" | python generate_fake_contacts.py
+      - name: Verify CSV generated
+        shell: bash
+        run: |
+          FILE=$(ls -t contactos_ficticios_mece_*.csv | head -n1)
+          test -f "$FILE"
+          LINES=$(wc -l < "$FILE")
+          echo "Generated file: $FILE ($LINES lines)"
+          if [ "$LINES" -lt 4 ]; then
+            echo "Expected at least 3 contacts plus header, got $LINES lines"; exit 1; fi
