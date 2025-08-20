@@ -1,0 +1,6 @@
+# Dependencias para el generador de contactos ficticios MECE
+# Las librerías csv, random, uuid, datetime y typing son parte de la biblioteca estándar de Python
+# No se requieren dependencias externas
+
+# Python 3.7+ es suficiente para ejecutar este script
+# El script utiliza solo módulos de la biblioteca estándar
